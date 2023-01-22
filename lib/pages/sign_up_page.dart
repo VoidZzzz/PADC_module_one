@@ -99,8 +99,26 @@ class _SignUpPageState extends State<SignUpPage> {
                   hintStyle: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Row(
+                children: const [
+                  Icon(
+                    Icons.info_outline_rounded,
+                    color: Colors.blue,
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    'Your password must be at least 6 characters.',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic),
+                  )
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(
                       fillColor: const MaterialStatePropertyAll(Colors.white),
@@ -122,38 +140,26 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              Row(
-                children: const [
-                  Icon(
-                    Icons.info_outline_rounded,
-                    color: Colors.blue,
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    'Your password must be at least 6 characters.',
-                    style: TextStyle(
-                        color: Colors.white70,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic),
-                  )
-                ],
-              ),
               const SizedBox(height: 20),
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: const Color.fromRGBO(51, 120, 170, 1),
-                ),
-                child: const Center(
-                  child: Text(
-                    'Create your Amazon account',
-                    style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: (){
+                  print('Create account button tapped');
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: const Color.fromRGBO(51, 120, 170, 1),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Create your Amazon account',
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
@@ -183,19 +189,24 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: const Color.fromRGBO(68, 81, 99, 1)),
-                child: const Center(
-                  child: Text(
-                    'Sign-in now',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: (){
+                  print('sign in button tapped');
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: const Color.fromRGBO(68, 81, 99, 1)),
+                  child: const Center(
+                    child: Text(
+                      'Sign-in now',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
